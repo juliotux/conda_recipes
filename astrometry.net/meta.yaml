@@ -1,0 +1,13 @@
+about:
+    home: http://astrometry.net/
+    license: BSD-like
+    summary: astrometry_net
+build:
+    number: '1'
+package:
+    name: astrometry.net
+    version: '0.70'
+source:
+    fn: master.zip
+    url:
+    - https://github.com/dstndstn/astrometry.net/archive/master.zip
