@@ -1,0 +1,45 @@
+{% set name = "image_registration" %}
+{% set version = "0.2.2.dev333" %}
+{% set commit = "35e45ba" %}
+
+
+package:
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
+
+source:
+  git_url: https://github.com/keflavich/image_registration.git
+  git_rev: '{{ commit }}'
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - python
+    - matplotlib
+    - astropy
+    - scipy
+    - pytest
+    - git
+  run:
+    - python
+    - matplotlib
+    - astropy
+    - scipy
+    - pytest
+
+test:
+  imports:
+    - image_registration
+
+about:
+  home: https://github.com/keflavich/image_registration
+  license: MIT
+  license_family: MIT
+  license_file: 'LICENSE'
+  summary: Image registration for astronomy
+
+extra:
+  recipe-maintainers: 
+    - juliotux

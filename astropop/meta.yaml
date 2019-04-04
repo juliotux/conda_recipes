@@ -1,0 +1,74 @@
+{% set name = "astropop" %}
+{% set version = "0.3.0.dev125" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://github.com/juliotux/astropop/archive/{{ version }}.tar.gz
+
+build:
+  number: 2
+
+requirements:
+  build:
+    - python >=3.5
+    - setuptools
+    - astropy >=3.0
+    - numpy >=0.15.4
+    - scipy
+    - scikit-image
+    - matplotlib
+    - cython >=0.29.2
+    - astroquery
+    - fortranformat
+    - astroscrappy
+    - reproject
+    - astroalign
+    - image_registration
+    - wget
+  run:
+    - python >=3.5
+    - astropy >=3.0
+    - numpy >=0.15.4
+    - scipy
+    - scikit-image
+    - matplotlib
+    - cython
+    - astroquery
+    - fortranformat
+    - astroscrappy
+    - reproject
+    - astroalign
+    - image_registration
+
+test:
+  # Python imports
+  imports:
+    - astropop
+    - astropop.astrometry
+    - astropop.catalogs
+    - astropop.image_processing
+    - astropop.math
+    - astropop.photometry
+    - astropop.pipelines
+    - astropop.plot_utils
+    - astropop.polarimetry
+    - astropop.simulate
+    - astropop.tests
+
+about:
+  home: https://github.com/juliotux/astropop
+  license: BSD 3-clause
+  license_family: BSD
+  license_file: LICENSE.rst
+  summary: 'The (non) famous ASTROnomical POlarimetry and Photometry pipeline '
+  description: |
+      AstroPOP is a library to construct polarimetry and photometry pipelines
+      primarily designed for Pico dos Dias and Impacton observatories.
+
+extra:
+  recipe-maintainers:
+    - juliotux
